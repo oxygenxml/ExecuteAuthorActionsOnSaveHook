@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The plugin.dtd file is located in the OXYGEN_INSATALL_DIR/plugins directory -->
+<!DOCTYPE plugin SYSTEM "../plugin.dtd">
+
+<plugin
+ id="com.oxygenxml.samples.savehook.SaveHookPlugin"
+ name="Save Hook"
+ description="Intercepts a save event and executes a number of author actions."
+ version="${project.version}"
+ vendor="oxygen Samples"
+ class="com.oxygenxml.samples.savehook.SaveHookPlugin"
+ classLoaderType="preferReferencedResources">
+ <runtime>
+        <library name="lib/${project.build.finalName}.jar"/>
+ </runtime>
+ 
+ <extension type="WorkspaceAccess" 
+  class="com.oxygenxml.samples.savehook.SaveHookExtension"/>
+</plugin>
