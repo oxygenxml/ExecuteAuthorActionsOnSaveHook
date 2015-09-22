@@ -16,6 +16,70 @@
 
 	<build>
 		<plugins>
+		<!-- Copy the latest add-on package -->
+			<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>2.9</version>
+            <executions>
+              <execution>
+                <id>copy-addon</id>
+                <phase>install</phase>
+                <goals>
+                  <goal>copy</goal>
+                </goals>
+                <configuration>
+                  <artifactItems>
+                    <artifactItem>
+                      <groupId>${project.groupId}</groupId>
+                      <artifactId>${project.artifactId}</artifactId>
+                      <version>${project.version}</version>
+                      <classifier>plugin</classifier>
+                      <type>zip</type>
+                      <overWrite>true</overWrite>
+                      <outputDirectory>${build.dir}/../builds/addon</outputDirectory>
+                    </artifactItem>
+                    <artifactItem>
+                      <groupId>${project.groupId}</groupId>
+                      <artifactId>${project.artifactId}</artifactId>
+                      <version>${project.version}</version>
+                      <classifier>plugin</classifier>
+                      <type>zip</type>
+                      <overWrite>true</overWrite>
+                      <outputDirectory>${build.dir}/../builds</outputDirectory>
+                    </artifactItem>
+                  </artifactItems>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          
+          
+          <!-- ============================= MAVEN CLEAN PLUGIN ============================= -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>2.4.1</version>
+            <executions>
+              <execution>
+                <id>delete-old-content</id>
+                <phase>test</phase>
+                <goals>
+                  <goal>clean</goal>
+                </goals>
+                <configuration>
+                  <followSymLinks>false</followSymLinks>
+                  <excludeDefaultDirectories>true</excludeDefaultDirectories>
+                  <filesets>
+                    <fileset>
+                      <directory>${build.dir}/../builds/addon/${project.artifactId}-${project.version}</directory>
+                    </fileset>
+                  </filesets>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

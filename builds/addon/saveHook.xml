@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xt:extensions xmlns:xt="http://www.oxygenxml.com/ns/extension"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.oxygenxml.com/ns/extension http://www.oxygenxml.com/ns/extension/extensions.xsd">
+    <xt:extension
+    id="com.oxygenxml.samples.savehook.SaveHookPlugin">
+    <xt:location href="saveHook-0.0.1-SNAPSHOT-plugin.zip"/>
+    <xt:version>0.0.1</xt:version>
+    <xt:oxy_version>15.0+</xt:oxy_version>
+    <xt:type>plugin</xt:type>
+    <xt:author>Oxygen Sample Plugins</xt:author>
+    <xt:name>Save Hook Plugin</xt:name>
+    <xt:description><html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Save Hook Plugin</title>
+    </head>
+    <body>
+        <div>
+            <p>Executes a given number of author actions before saving a file. A good example is if you have an author action that updates an ID based on the file name. This action needs to be executed every time the editor is saved.</p>
+        </div>
+    </body>
+</html>
+</xt:description>
+    <xt:license><![CDATA[]]></xt:license>
+</xt:extension>
+</xt:extensions>
