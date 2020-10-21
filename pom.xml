@@ -6,6 +6,16 @@
 	<groupId>com.oxygenxml.samples</groupId>
 	<artifactId>saveHook</artifactId>
 
+    <developers>
+      <developer>
+        <name>Alex Jitianu</name>
+        <email>alex_jitianu@sync.ro</email>
+        <roles>
+          <role>manager</role>
+        </roles>
+      </developer>
+    </developers>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.oxygenxml</groupId>
