@@ -7,7 +7,7 @@
  name="Save Hook"
  description="Intercepts a save event and executes a number of author actions."
  version="${project.version}"
- vendor="oxygen Samples"
+ vendor="Syncro Soft"
  class="com.oxygenxml.samples.savehook.SaveHookPlugin"
  classLoaderType="preferReferencedResources">
  <runtime>
